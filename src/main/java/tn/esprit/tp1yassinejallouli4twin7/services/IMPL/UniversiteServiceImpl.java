@@ -2,6 +2,7 @@ package tn.esprit.tp1yassinejallouli4twin7.services.IMPL;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.tp1yassinejallouli4twin7.entities.Foyer;
 import tn.esprit.tp1yassinejallouli4twin7.entities.Universite;
