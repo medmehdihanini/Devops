@@ -135,4 +135,9 @@ public class EtudiantServiceImpl implements IEtudiantService {
         etudiant.setEtat(0);
         return etudiantRepository.save(etudiant);
     }
+
+
+
+
+
 }
