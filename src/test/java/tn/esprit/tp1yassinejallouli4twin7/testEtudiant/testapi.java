@@ -23,8 +23,8 @@ public class testapi {
     @Test
     public void testAjouterUniversite() {
         Universite universite = new Universite();
-        universite.setNomUniversite("test");
-        universite.setAdresse("azer");
+        universite.setNomUniversite("a");
+        universite.setAdresse("d");
         Universite savedUniversite = universiteService.ajouterUniversite(universite);
         assertNotNull(savedUniversite);
     }

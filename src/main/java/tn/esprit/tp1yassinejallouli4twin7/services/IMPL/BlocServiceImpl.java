@@ -12,10 +12,7 @@ import tn.esprit.tp1yassinejallouli4twin7.repositories.IChambreRepo;
 import tn.esprit.tp1yassinejallouli4twin7.repositories.IFoyerRepo;
 import tn.esprit.tp1yassinejallouli4twin7.services.IBlocService;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Primary
 @AllArgsConstructor
@@ -24,6 +21,9 @@ public class BlocServiceImpl implements IBlocService {
     IBlocRepo blocRepo;
     IChambreRepo chambreRepo;
     IFoyerRepo foyerRepo;
+
+
+
     @Override
     public Bloc ajouterBloc(Bloc b) {
         return blocRepo.save(b);
