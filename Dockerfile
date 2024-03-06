@@ -1,32 +1,23 @@
 # Use a base image with Maven for building the application
-FROM openjdk:17 AS build
+FROM openjdk:17-alpine AS build
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the Maven project descriptor files
-COPY pom.xml .
-
-# Download dependencies and cache them in Docker layer
+# Copy the project files and download dependencies
+COPY pom.xml ./
 RUN mvn dependency:go-offline -B
 
-# Copy the application source code
+# Copy the source code and package the application
 COPY src ./src
-
-# Package the application
 RUN mvn package -DskipTests
 
-# Create a lightweight Docker image with the JAR file
-FROM openjdk-17
-
-# Set the working directory in the container
-WORKDIR /app
+# Create a lightweight final image with the JAR file
+FROM openjdk:17-alpine
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port the app runs on
+# Expose the port and run the application
 EXPOSE 9090
-
-# Command to run the application
 CMD ["java", "-jar", "app.jar"]
