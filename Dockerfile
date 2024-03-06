@@ -1,5 +1,5 @@
 # Use a base image with Maven for building the application
-FROM openjdk-17-jdk AS build
+FROM openjdk:17 AS build
 
 # Set the working directory in the container
 WORKDIR /app
