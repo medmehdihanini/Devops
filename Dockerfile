@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy Maven and JDK from Jenkins image
 COPY --from=jenkins /usr/share/maven /usr/share/maven
-COPY --from=jenkins /usr/lib/jvm/java-17-openjdk /usr/lib/jvm/java-17-openjdk-amd64
+COPY --from=jenkins /usr/lib/jvm/java-17-openjdk-amd64 /usr/lib/jvm/java-17-openjdk-amd64
 
 # Set environment variables for Maven and Java
 ENV MAVEN_HOME=/usr/share/maven
