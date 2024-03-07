@@ -4,9 +4,17 @@ FROM openjdk:17-alpine AS build
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the project files and install Maven
+# Copy Maven and JDK from Jenkins image
+COPY --from=jenkins /usr/share/maven /usr/share/maven
+COPY --from=jenkins /usr/lib/jvm/java-17-openjdk /usr/lib/jvm/java-17-openjdk
+
+# Set environment variables for Maven and Java
+ENV MAVEN_HOME=/usr/share/maven
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+ENV PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH
+
+# Copy the project files
 COPY pom.xml ./
-RUN apk add --no-cache maven
 
 # Download dependencies and cache them in Docker layer
 RUN mvn dependency:go-offline -B
@@ -19,6 +27,9 @@ RUN mvn package -DskipTests
 
 # Create a lightweight final image with the JAR file
 FROM openjdk:17-alpine
+    
+# Set the working directory in the container
+WORKDIR /app
 
 # Copy the JAR file from the build stage
 COPY --from=build /app/target/*.jar app.jar
