@@ -10,7 +10,7 @@ COPY --from=jenkins /usr/lib/jvm/java-17-openjdk /usr/lib/jvm/java-17-openjdk
 
 # Set environment variables for Maven and Java
 ENV MAVEN_HOME=/usr/share/maven
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/openjdk-17
 ENV PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH
 
 # Copy the project files
