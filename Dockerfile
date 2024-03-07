@@ -1,44 +1,26 @@
-# Use a base image with Alpine Linux and OpenJDK 17 for building
-FROM openjdk:17-alpine AS build
+# Use a base image with Maven and Java for building the application
+FROM maven:3.8.4-openjdk-17 AS build
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy Maven and JDK from Jenkins image
-COPY --from=jenkins /usr/share/maven /usr/share/maven
-COPY --from=jenkins /usr/lib/jvm/java-17-openjdk-amd64 /usr/lib/jvm/java-17-openjdk-amd64
-
-# Set environment variables for Maven and Java
-ENV MAVEN_HOME=/usr/share/maven
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-ENV PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH
-
-# Set JAVA_HOME explicitly for Maven
-RUN export JAVA_HOME=$JAVA_HOME
-
-# Copy the project files
+# Copy the project files and download dependencies
 COPY pom.xml ./
-
-# Download dependencies and cache them in Docker layer
 RUN mvn dependency:go-offline -B
 
-# Copy the application source code
+# Copy the source code and package the application
 COPY src ./src
-
-# Package the application (skip tests)
 RUN mvn package -DskipTests
 
 # Create a lightweight final image with the JAR file
 FROM openjdk:17-alpine
-    
+
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the JAR file from the build stage
+# Copy the JAR file from the build stage to the final image
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port the app runs on
+# Expose the port and run the application
 EXPOSE 9090
-
-# Command to run the application
 CMD ["java", "-jar", "app.jar"]
