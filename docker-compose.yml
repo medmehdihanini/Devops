@@ -21,9 +21,9 @@ services:
   mysql-db2:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: your_password # Set your desired password
-      MYSQL_DATABASE: your_database_name # Set your desired database name
-      MYSQL_USER: your_username # Set your desired username
-      MYSQL_PASSWORD: your_password # Set your desired password
+      MYSQL_ROOT_PASSWORD: 123456789
+      MYSQL_DATABASE: spring_db2test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123456789
     ports:
-      - "3308:3306" # Use a different port for the new MySQL service
+      - "3308:3308" # Use a different host port for the new MySQL service
