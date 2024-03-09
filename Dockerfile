@@ -24,7 +24,7 @@ FROM openjdk:17-alpine
 COPY --from=build /app/target/*.jar app.jar
 
 # Expose the port the app runs on
-EXPOSE 9090
+EXPOSE 9095
 
 # Command to run the application
 CMD ["java", "-jar", "app.jar"]
