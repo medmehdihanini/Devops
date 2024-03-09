@@ -8,15 +8,7 @@ services:
     depends_on:
       - mysql-db2
 
-  mysql-db:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456789
-      MYSQL_DATABASE: spring_db2
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 123456789
-    ports:
-      - "3306:3306" # Existing MySQL service port mapping
+
 
   mysql-db2:
     image: mysql:latest
