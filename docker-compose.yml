@@ -15,7 +15,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 123456789
       MYSQL_DATABASE: spring_db2test
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 123456789
     ports:
       - "3308:3308" # Use a different host port for the new MySQL service
