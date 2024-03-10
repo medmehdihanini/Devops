@@ -4,7 +4,7 @@ services:
   spring-app:
     image: yosrspringapp:latest
     ports:
-      - "9090:9090"
+      - "8089:9090"
     depends_on:
       - mysql-db2
 
