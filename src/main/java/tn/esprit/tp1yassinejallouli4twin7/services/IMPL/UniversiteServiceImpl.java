@@ -17,7 +17,7 @@ import java.util.List;
 public class UniversiteServiceImpl implements IUniversiteService {
 
     IUniversiteRepo universiteRepo;
-    IFoyerRepo foyerRepo;
+    private final IFoyerRepo foyerRepo;
     @Override
     public Universite ajouterUniversite(Universite u) {
         return universiteRepo.save(u);
@@ -58,9 +58,9 @@ public class UniversiteServiceImpl implements IUniversiteService {
     @Transactional
     public Universite desaffecterFoyerAUniversite(long idFoyer, long idUniversite) {
         Universite u = universiteRepo.findById(idUniversite).orElse(null);
-        Foyer f=foyerRepo.findById(idFoyer).orElse(null);
+        Foyer f = foyerRepo.findById(idFoyer).orElse(null);
 
-        if(u!=null && u.getFoyer().getIdFoyer()==idFoyer ){
+        if (u != null && u.getFoyer() != null && u.getFoyer().getIdFoyer() == idFoyer) {
             f.setEtat(0);
             u.setFoyer(null);
         }
@@ -68,14 +68,27 @@ public class UniversiteServiceImpl implements IUniversiteService {
         return u;
     }
 
+
     @Override
     public Universite affecterFoyerAUniversite(long idFoyer, long iduv) {
-        Foyer f=foyerRepo.findById(idFoyer).orElse(null);
-        f.setEtat(1);
-        Universite u =universiteRepo.findById(iduv).orElse(null);
-        u.setFoyer(f);
-        this.ajouterUniversite(u);
-        return u;
+        Foyer f = foyerRepo.findById(idFoyer).orElseGet(() -> {
+            Foyer newFoyer = new Foyer();
+            newFoyer.setIdFoyer(idFoyer);
+            newFoyer.setEtat(1);
+            return newFoyer;
+        });
+
+        Universite u = universiteRepo.findById(iduv).orElse(null);
+
+        if (u != null) {
+            u.setFoyer(f);
+            this.ajouterUniversite(u);
+            return u;
+        } else {
+            // Handle the case where the Universite object is null
+            // For example, throw an exception or log a message
+            return null;
+        }
     }
 
 
