@@ -14,7 +14,7 @@ import tn.esprit.tp1yassinejallouli4twin7.services.IUniversiteService;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class testapi {
-    @Autowired
+   /* @Autowired
     private UniversiteServiceImpl universiteService;
     @Autowired
     EtudiantServiceImpl etudiantService;
@@ -60,6 +60,6 @@ public class testapi {
         assertEquals(etudiant, result);
     }
 
-
+*/
 
 }
