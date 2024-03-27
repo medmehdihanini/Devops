@@ -3,7 +3,6 @@ package tn.esprit.tp1yassinejallouli4twin7.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.tp1yassinejallouli4twin7.entities.Bloc;
-import tn.esprit.tp1yassinejallouli4twin7.entities.Universite;
 import tn.esprit.tp1yassinejallouli4twin7.services.IBlocService;
 
 import java.util.List;
