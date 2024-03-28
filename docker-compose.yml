@@ -17,9 +17,3 @@ services:
       MYSQL_DATABASE: spring_db2test
     ports:
       - "3308:3308" # Use a different host port for the new MySQL service
-
-
-  grafana:
-    image: grafana/grafana:latest
-    ports:
-      - "3000:3000"
