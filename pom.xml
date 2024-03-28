@@ -18,9 +18,8 @@
     </properties>
     <distributionManagement>
         <repository>
-            <id>deploymentRepo</id>
-            <name>Nexus Repository</name>
-            <url>http://192.168.1.107:8085/repository/maven-releases/</url>
+            <id>nexus</id>
+            <url>http://192.168.1.107:8085/repository/maven-snapshots/</url>
         </repository>
     </distributionManagement>
 
