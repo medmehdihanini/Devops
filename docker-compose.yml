@@ -2,22 +2,16 @@ version: '3'
 
 services:
   spring-app:
-    image: ezui7/nejd:springtest
+    image: ezui7/nejd:springdevops
     ports:
-      - "8091:8080"
+      - "8091:8091"
     depends_on:
       - mysql-db
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3307/springDB
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=123456789
 
   mysql-db:
     image: mysql:latest
     ports:
-      - "3307:3306"
+      - "3307:3307"
     environment:
       - MYSQL_DATABASE=springDB
       - MYSQL_ROOT_PASSWORD=123456789
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=123456789
