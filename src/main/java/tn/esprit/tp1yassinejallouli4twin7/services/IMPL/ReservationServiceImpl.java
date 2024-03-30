@@ -52,8 +52,12 @@ public class ReservationServiceImpl implements IReservationService {
         List<Reservation> r = resrvationRepository.findByEtudiants(e);
         for(Reservation re:r) {
             Chambre ch = chambreRepository.findChambreByReservations(re);
-            ch.getReservations().remove(re);
-            re.getEtudiants().remove(e);
+            if(ch!=null && ch.getReservations()!=null){
+                ch.getReservations().remove(re);
+            }
+            if(re.getEtudiants()!=null){
+                re.getEtudiants().remove(e);
+            }
             resrvationRepository.delete(re);
         }
     }
@@ -78,7 +82,7 @@ public class ReservationServiceImpl implements IReservationService {
         }
         ch.getReservations().add(resrvation);
         resrvation.getEtudiants().add(etudiantRepository.findEtudiantByCin(cin));
-        return resrvation;
+        return resrvationRepository.save(resrvation);
     }
 
     @Override

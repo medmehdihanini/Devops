@@ -16,12 +16,6 @@
     <properties>
         <java.version>17</java.version>
     </properties>
-    <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <url>http://192.168.1.196:8082/repository/maven-snapshots/</url>
-        </repository>
-    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -75,6 +69,15 @@
         </dependency>
 
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>spring</id>
+            <name>spring</name>
+            <url>http://192.168.1.60:8083/repository/spring/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
