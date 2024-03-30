@@ -6,10 +6,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-import tn.esprit.tp1yassinejallouli4twin7.entities.Bloc;
-import tn.esprit.tp1yassinejallouli4twin7.entities.Chambre;
-import tn.esprit.tp1yassinejallouli4twin7.entities.Reservation;
-import tn.esprit.tp1yassinejallouli4twin7.entities.TypeChambre;
+import tn.esprit.tp1yassinejallouli4twin7.entities.*;
 
 import java.util.List;
 
@@ -27,7 +24,6 @@ public interface IChambreRepo extends CrudRepository<Chambre,Long> {
     List<Chambre>findChambreNonAffecter();
 /*nejd*/
     Page<Chambre> findAll(Specification<Chambre> chambreSpecification, Pageable pageable);
-
 
 
 
