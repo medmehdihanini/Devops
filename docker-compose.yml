@@ -2,7 +2,7 @@ version: '3'
 
 services:
   spring-app:
-    image: yosrspringapp:latest
+    image: mehdihanini:latest
     ports:
       - "7070:7070"
     depends_on:
