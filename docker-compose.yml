@@ -2,7 +2,7 @@ version: '3'
 
 services:
   spring-app:
-    image: yosrspringapp:latest
+    image: appkamel:latest
     ports:
       - "7070:7070"
     depends_on:
