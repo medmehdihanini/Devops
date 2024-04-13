@@ -2,9 +2,11 @@ version: '3'
 
 services:
   mysqldb:
+    image: mysql:latest
+    container_name: mysql-container2
     environment:
       MYSQL_ROOT_PASSWORD: 123456789
-      MYSQL_DATABASE: springDBJallouli
+      MYSQL_DATABASE: springDB
     ports:
       - "3306:3306"
 
