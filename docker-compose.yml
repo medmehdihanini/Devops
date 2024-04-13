@@ -1,17 +1,12 @@
 version: '3'
 
 services:
-  # Remove the mysqldb service definition
-  # This will prevent Docker Compose from trying to create a new MySQL container
-
   #backendapp
   app_foyer_backend:
     image: jallouli:latest
     container_name: jallouli-devops
     ports:
       - "8089:8089"
-    depends_on:
-      - mysqldb
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container:3306/springDBJallouli
       SPRING_DATASOURCE_USERNAME: root
