@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456789
+      MYSQL_DATABASE: springDBJallouli
+    ports:
+      - "3306:3306"
+
+
+  #backendapp
+
+  app_foyer_backend:
+    image: jallouli:latest
+    container_name: jallouli-devops
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysqldb
