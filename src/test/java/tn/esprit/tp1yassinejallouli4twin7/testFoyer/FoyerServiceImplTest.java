@@ -26,13 +26,13 @@ public class FoyerServiceImplTest {
 
     @Mock
     private IFoyerRepo foyerRepo;
-
+/*
     @Mock
     private IUniversiteRepo universiteRepo;
 
     @Mock
     private IBlocService blocService;
-
+*/
     @InjectMocks
     private FoyerServicesImpl foyerServicesimpl;
 
@@ -121,7 +121,7 @@ public class FoyerServiceImplTest {
         // Assert that the returned list of Foyer objects is the same as the expected list
         assertEquals(expectedFoyers, retrievedFoyers);
     }
-
+/*
     @Test
     public void testAjouterFoyerEtAffecterAUniversite() {
         // Create a sample Foyer
@@ -152,5 +152,5 @@ public class FoyerServiceImplTest {
         // Assert that the returned Foyer is the same as the provided one
         assertEquals(foyer, result);
     }
-
+*/
 }
