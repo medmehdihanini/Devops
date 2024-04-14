@@ -1,7 +1,7 @@
 version: '3'
 
 services:
- spring-app:
+ angular-app:
     image: ezui7/nejd:angular
     ports:
       - "4200:4200"
