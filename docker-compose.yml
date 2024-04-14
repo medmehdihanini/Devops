@@ -5,6 +5,9 @@ services:
     image: ezui7/nejd:angular
     ports:
       - "4200:4200"
+    depends_on:
+      - spring-app
+      - mysql-db
 
   spring-app:
     image: ezui7/nejd:springdevops
