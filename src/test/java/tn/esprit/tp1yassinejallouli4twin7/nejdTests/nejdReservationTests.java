@@ -1,4 +1,4 @@
-package tn.esprit.tp1yassinejallouli4twin7.nejdtest;
+package tn.esprit.tp1yassinejallouli4twin7.nejdTests;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
-public class nejdReservationtest {
+public class nejdReservationTests {
 
     @Mock
     private IReservationRepo resrvationRepository;
