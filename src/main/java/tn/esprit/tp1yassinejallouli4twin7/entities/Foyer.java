@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 @Setter
 @Getter
@@ -27,7 +28,7 @@ public class Foyer implements Serializable {
 
     @JsonIgnoreProperties("foyer")
     @OneToMany(mappedBy = "foyer",fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-    Set<Bloc> blocs;
+    private Set<Bloc> blocs = new HashSet<>(); // Initialize blocs set in the constructor
 
     private String nomFoyer;
 

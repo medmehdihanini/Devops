@@ -76,10 +76,13 @@ public class FoyerServicesImpl implements IFoyerServices {
     public Foyer ajouterFoyerEtAffecterAUniversite(Foyer f, Long idUniv) {
         this.ajouterFoyer(f);
 
-        //ajouter bloc et affecter au foyer
-        for(Bloc b:f.getBlocs() ){
-            this.blocService.ajouterBloc(b);
-            b.setFoyer(f);
+        // Check if blocs is null before iterating over it
+        if (f.getBlocs() != null) {
+            // Ajouter bloc et affecter au foyer
+            for (Bloc b : f.getBlocs()) {
+                this.blocService.ajouterBloc(b);
+                b.setFoyer(f);
+            }
         }
 
         Universite u = universiteRepo.findById(idUniv).orElse(null);
@@ -89,6 +92,7 @@ public class FoyerServicesImpl implements IFoyerServices {
 
         return f;
     }
+
 
 
 
