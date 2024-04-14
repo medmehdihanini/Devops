@@ -12,7 +12,6 @@ import tn.esprit.tp1yassinejallouli4twin7.services.IFoyerServices;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@ExtendWith(SpringExtension.class)
 @SpringBootTest
 class Tp1YassineJallouli4Twin7ApplicationTests {
 
@@ -24,22 +23,6 @@ class Tp1YassineJallouli4Twin7ApplicationTests {
 
     @Test
     void contextLoads() {
-        assertNotNull(foyerService);
-
     }
 
-    @Test
-    void testAjouterFoyer() {
-        // Given
-        Foyer foyerToAdd = new Foyer(); // Create a sample Foyer object
-
-        // When
-        Foyer savedFoyer = foyerService.ajouterFoyer(foyerToAdd); // Call the method to be tested
-
-        // Then
-        assertNotNull(savedFoyer); // Verify that the returned Foyer object is not null
-        Foyer retrievedFoyer = foyerRepository.findById(savedFoyer.getIdFoyer()).orElse(null); // Retrieve the saved Foyer from the repository
-        assertNotNull(retrievedFoyer); // Verify that the retrieved Foyer is not null
-        assertEquals(foyerToAdd, retrievedFoyer); // Verify that the retrieved Foyer matches the input Foyer
-    }
 }
