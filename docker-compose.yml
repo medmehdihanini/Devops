@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    spring-app:
+  spring-app:
     image: ezui7/nejd:springdevops
     ports:
       - "8091:8091"
@@ -15,7 +15,7 @@ services:
     environment:
       - MYSQL_DATABASE=springDB
       - MYSQL_ROOT_PASSWORD=123456789
-      
+
   angular-app:
     image: ezui7/nejd:angular
     ports:
