@@ -23,6 +23,11 @@ public class ReservationRestController {
 
     final public IReservationService reservationService;
 
+    @GetMapping("test")
+    public String tests() {
+        return "hello";
+    }
+
     @GetMapping("ALLReservation")
     public List<Reservation> getAllReservation() {
         return reservationService.GetAllReservation();
