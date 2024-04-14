@@ -4,14 +4,14 @@ services:
   spring-app:
     image: ezui7/nejd:springdevops
     ports:
-      - "8091:8091"
+      - "8090:8090"
     depends_on:
       - mysql-db
 
   mysql-db:
     image: mysql
     ports:
-      - "3307:3307"
+      - "3308:3308"
     environment:
       - MYSQL_DATABASE=springDB
       - MYSQL_ROOT_PASSWORD=123456789
