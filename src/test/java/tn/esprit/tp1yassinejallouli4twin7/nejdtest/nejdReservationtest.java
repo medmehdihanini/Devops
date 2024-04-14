@@ -1,6 +1,6 @@
 package tn.esprit.tp1yassinejallouli4twin7.nejdtest;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
