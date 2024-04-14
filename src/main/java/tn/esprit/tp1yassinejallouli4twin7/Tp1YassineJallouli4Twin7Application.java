@@ -20,8 +20,5 @@ public class Tp1YassineJallouli4Twin7Application {
         SpringApplication.run(Tp1YassineJallouli4Twin7Application.class, args);
     }
 
-    @Bean
-    public PrometheusMeterRegistry prometheusMeterRegistry() {
-        return new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
-    }
+
 }
