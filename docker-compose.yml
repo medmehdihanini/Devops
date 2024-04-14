@@ -9,7 +9,7 @@ services:
       - mysql-db
 
   mysql-db:
-    image: mysql:latest
+    image: mysql
     ports:
       - "3307:3307"
     environment:
