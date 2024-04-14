@@ -15,11 +15,3 @@ services:
     environment:
       - MYSQL_DATABASE=springDB
       - MYSQL_ROOT_PASSWORD=123456789
-
-  angular-app:
-    image: ezui7/nejd:angular
-    ports:
-      - "4200:4200"
-    depends_on:
-      - spring-app
-      - mysql-db
