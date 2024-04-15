@@ -12,6 +12,7 @@ import tn.esprit.tp1yassinejallouli4twin7.services.IFoyerServices;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 class Tp1YassineJallouli4Twin7ApplicationTests {
 
@@ -23,6 +24,8 @@ class Tp1YassineJallouli4Twin7ApplicationTests {
 
     @Test
     void contextLoads() {
+        assertNotNull(foyerService);
+
     }
 
 }

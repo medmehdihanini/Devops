@@ -22,7 +22,7 @@ public class Foyer implements Serializable {
 
 
     @ManyToOne
-    private Restaurant resto;
+    private transient Restaurant resto;
 
 
     @JsonIgnoreProperties("foyer")
