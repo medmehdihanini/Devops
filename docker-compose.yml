@@ -19,7 +19,7 @@ services:
   angular-app:
     image: ezui7/nejd:angular
     ports:
-      - "8088:4200"
+      - "4200:4200"
     depends_on:
       - spring-app
       - mysql-db
