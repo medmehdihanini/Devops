@@ -2,7 +2,7 @@ version: '3'
 
 services:
   spring-app:
-    image: ezui7/nejd:springtest
+    image: ezui7/nejd:springtest:latest
     ports:
       - "8091:8091"
     depends_on:
