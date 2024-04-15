@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor //2eme lezem el final mawjouda
 @RequestMapping("chambre")
 @RestController
-@CrossOrigin(origins = "*")
+
 public class ChambreRestController {
     private final IChambreService chambreService;
 

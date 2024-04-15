@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor //2eme lezem el final mawjouda
 @RequestMapping("Etudiant")
 @RestController
-@CrossOrigin(origins = "*")
+
 public class EtudiantRestController {
     private final IEtudiantService etudiantService;
     /*

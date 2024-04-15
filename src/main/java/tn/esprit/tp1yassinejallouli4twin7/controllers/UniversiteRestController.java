@@ -10,7 +10,7 @@ import java.util.List;
 @RequiredArgsConstructor //2eme lezem el final mawjouda
 @RequestMapping("universite")
 @RestController
-@CrossOrigin(origins = "*")
+
 public class UniversiteRestController {
     private final IUniversiteService universiteService;
 

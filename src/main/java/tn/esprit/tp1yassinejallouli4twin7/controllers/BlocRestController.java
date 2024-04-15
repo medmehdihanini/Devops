@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("bloc")
 @RestController
-@CrossOrigin(origins = "*")
+
 public class BlocRestController {
 
     private final IBlocService blocService;
