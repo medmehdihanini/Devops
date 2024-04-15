@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor //2eme lezem el final mawjouda
 @RequestMapping("foyer")
 @RestController
-@CrossOrigin(origins = "*") // Replace with your Angular app's URL
+
 public class FoyerRestController {
     private final IFoyerServices foyerServices;
 
