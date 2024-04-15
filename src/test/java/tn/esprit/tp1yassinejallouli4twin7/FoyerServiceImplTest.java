@@ -1,4 +1,4 @@
-package tn.esprit.tp1yassinejallouli4twin7.testFoyer;
+package tn.esprit.tp1yassinejallouli4twin7;
 
 
 import org.junit.Test;
