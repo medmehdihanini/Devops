@@ -19,7 +19,7 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>http://172.17.0.1:8081/repository/maven-snapshots/</url>
+            <url>http://172.18.0.1:8081/repository/maven-snapshots/4-15-2024</url>
         </repository>
     </distributionManagement>
 
