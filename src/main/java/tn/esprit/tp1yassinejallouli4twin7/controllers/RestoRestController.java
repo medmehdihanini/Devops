@@ -39,7 +39,7 @@ public class RestoRestController {
         return restoService.updateResto(r);
     }
 
-    @DeleteMapping ("/delete3/{idResto}")
+    @DeleteMapping ("/delete4/{idResto}")
     public void deleteFoyer(@PathVariable Long idResto){
         restoService.supprimerResto(idResto);
     }
